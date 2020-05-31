@@ -3,7 +3,7 @@
 # get Data
 
 follow instruction to set up wget for Mac/Linux at : https://disc.gsfc.nasa.gov/data-access#mac_linux_wget
-
+then execute :
 ```
 cd ozone
 wget --load-cookies ~/.urs_cookies --save-cookies ~/.urs_cookies --auth-no-challenge=on --keep-session-cookies --content-disposition -i subset_OMPS_NPP_NMTO3_L3_DAILY_2_20200531_062832.txt
