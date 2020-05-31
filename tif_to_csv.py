@@ -183,6 +183,16 @@ new_col = ['feat1','feat2','feat3','feat4','feat5']
 for col_name in new_col:
   data[col_name] =""
 
+df_pred = pd.read_csv('pred.csv',sep=';')
+
+
+for aoi in df_pred.AOI.unique().tolist():
+  for date in df_pred.loc[df_pred.AOI == aoi].date.unique().tolist():
+    pred = df_pred.loc[(df_pred.AOI == aoi) & (df_pred.date == date)].pred.values[0]
+    data.loc[(data.AOI == aoi) & (data.Date == date),'pred'] = pred
+
+
+
 data.to_csv("data.csv",index=False, sep=';')
 
 
